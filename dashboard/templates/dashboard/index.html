@@ -1,0 +1,25 @@
+{% extends "core/base.html" %}
+
+{% block title %}My Tasks {% endblock  %}
+
+{% block content %}
+    {% comment %} <p class="futa">Welcome <a href="#" class="ader">Login</a> to get started.</p> {% endcomment %}
+    <div class="surround">
+        <div class="todo">
+            <p class="jcc">My Todo List</p>
+            <div class="list">
+                
+                    {% for todo in todos %}
+                    <div class="yur">
+                        <p class="item">{{ todo.name }}</p>
+                        <div class="othyu">
+                            <a href="{% url 'list:edit' pk=todo.pk %}" class="edit">&#9998;</a>
+                            <a href="{% url 'list:delete' pk=todo.pk %}" class="del">&#x2421;</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+{% endblock  %}

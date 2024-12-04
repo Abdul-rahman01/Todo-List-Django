@@ -1,0 +1,14 @@
+{% extends "core/base.html" %}
+
+{% block title %}Welcome {% endblock  %}
+
+{% block content %}
+    {% comment %} <p class="futa">Welcome <a href="#" class="ader">Login</a> to get started.</p> {% endcomment %}
+    <div class="surround">
+       {% if user.is_authenticated %}
+            <p>Welcome to Todo, where you can create your tasks</p>
+       {% else %}
+            <p>Welcome to Todo <a href="{% url 'core:login' %}" class="ader">Login</a> to get started</p>
+       {% endif %}
+    </div>
+{% endblock  %}
